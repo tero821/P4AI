@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 61, 58, 51;
+  --background-start-rgb: 248, 247, 244;
+  --background-end-rgb: 248, 247, 244;
+}
+
+/* Original dark mode values kept commented out if needed for future toggle
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 15;
+  --background-end-rgb: 20, 20, 40;
+}
+*/
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  /* Fixed single color for consistency as requested */
+  min-height: 100vh;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility glass-panel {
+  @apply bg-white/50 backdrop-blur-lg border border-black/5 shadow-xl;
+}
+
+@utility glass-button {
+  @apply bg-black/5 hover:bg-black/10 active:bg-black/5 backdrop-blur-md border border-black/5 transition-all duration-200;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px rgba(120, 100, 255, 0.5);
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400;
+}
